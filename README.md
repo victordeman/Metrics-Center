@@ -59,3 +59,51 @@ Clustering is a fundamental unsupervised learning task, but evaluating clusterin
 - **Deployment**: Fully Dockerized with docker-compose
 
 ## Repository Structure
+
+```
+metrics-center/
+├── backend/                  # FastAPI backend
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── api/              # Route definitions (auth, users, projects)
+│   │   ├── models/           # SQLAlchemy models
+│   │   ├── schemas/          # Pydantic schemas
+│   │   ├── crud/             # Database operations
+│   │   ├── services/         # Business logic (clustering, visualization, Google Drive)
+│   │   ├── utils/            # Helpers (auth, file handling)
+│   │   └── dependencies.py
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   └── .env.example
+├── frontend/                 # React + Vite + Tailwind frontend
+│   ├── src/
+│   │   ├── components/       # Reusable UI components
+│   │   ├── pages/            # Page components (Login, Dashboard, ProjectDetail)
+│   │   ├── hooks/            # Custom React hooks
+│   │   ├── services/         # API client
+│   │   ├── utils/
+│   │   └── App.jsx
+│   ├── public/
+│   ├── tailwind.config.js
+│   ├── vite.config.js
+│   ├── package.json
+│   └── Dockerfile
+├── docker-compose.yml        # Orchestrates backend, frontend, and Redis
+├── README.md                 # This file
+└── .gitignore
+```
+
+## Quick Start (Local Development)
+
+### Prerequisites
+- Python 3.10+
+- Node.js 18+
+- Docker & docker-compose (optional)
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/victordeman/Metrics-Center.git
+cd Metrics-Center
+
+
+
